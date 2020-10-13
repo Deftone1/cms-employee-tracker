@@ -1,0 +1,24 @@
+{
+  "name": "cms-employee-tracker",
+  "version": "1.0.0",
+  "description": "Application to house and store a company's employees through use of Node, MySQL, and Inquirer",
+  "main": "tracker.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Deftone1/cms-employee-tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Deftone1/cms-employee-tracker/issues"
+  },
+  "homepage": "https://github.com/Deftone1/cms-employee-tracker#readme",
+  "dependencies": {
+    "inquirer": "^7.3.3",
+    "mysql": "^2.18.1"
+  }
+}
