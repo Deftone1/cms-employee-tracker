@@ -17,12 +17,12 @@ connection.connect((err) => {
         throw err;
     }
     console.log("connected as id " + connection.threadId);
-    afterConnection();
+    inquirerInit();
 });
 
 
 // initializing function for inquirer
-function afterConnection() {
+function inquirerInit() {
     console.log("Welcome to the CMS Employee Tracker!")
     return inquirer
         .prompt([
