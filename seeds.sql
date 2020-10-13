@@ -2,14 +2,14 @@ USE employeeDB;
 
 -- Department Seeds 
 
-INSERT INTO department (id, dept_name)
-VALUES (1, "Clerical");
-INSERT INTO department (id, dept_name)
-VALUES (2, "Sales");
-INSERT INTO department (id, dept_name)
-VALUES (3, "IT");
-INSERT INTO department (id,dept_name)
-VALUES (4, "Human Resources");
+INSERT INTO department (dept_name)
+VALUES ("Clerical");
+INSERT INTO department (dept_name)
+VALUES  ("Sales");
+INSERT INTO department (dept_name)
+VALUES ("IT");
+INSERT INTO department (dept_name)
+VALUES ("Human Resources");
 
 SELECT * FROM employeeDB.department;
 
@@ -38,6 +38,7 @@ VALUES ("Investor", 80000, 4);
 
 SELECT * FROM employeeDB.employee_role;
 
+
 -- -- Employee Seeds
 
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
@@ -50,3 +51,4 @@ INSERT INTO employee (first_name, last_name, role_id, manager_id)
 VALUES ("Jenni", "Charles", 4, 2);
 
 SELECT * FROM employeeDB.employee;
+
