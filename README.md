@@ -1,5 +1,5 @@
 # cms-employee-tracker
-Application to house and store a company's employees through use of Node, MySQL, and Inquirer. This application was interesting to make and gave me an idea of how this type of programming could be useful for real world applications.
+Application to house and store a company's employees through use of Node, MySQL, and Inquirer. This application was interesting to make and gave me an idea of how this type of programming could be useful for real world applications. Although the other choices seem to function properly, I could not figure out the 'update employee role' choice, after much trial and error. 
 
 # User Story
 

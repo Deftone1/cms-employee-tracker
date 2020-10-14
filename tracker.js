@@ -196,7 +196,7 @@ function viewAllEmployeesByDept() {
                 name: "employeeByDept"
             }]).then(function (answer) {
                 console.log(answer);
-                const str1 = "SELECT first_name, last_name, title, salary, dept_name AS 'department' FROM employee LEFT JOIN employee_role ON employee.role_id = employee_role.id LEFT JOIN department ON employee_role.department_id = department.id WHERE department.dept_name = '"+ answer.employeeByDept + "'"
+                const str1 = "SELECT first_name, last_name, title, salary, dept_name AS 'department' FROM employee LEFT JOIN employee_role ON employee.role_id = employee_role.id LEFT JOIN department ON employee_role.department_id = department.id WHERE department.dept_name = '" + answer.employeeByDept + "'"
                 connection.query(str1, function (err, result) {
                     if (err) throw err;
 
@@ -230,6 +230,7 @@ function addEmployee() {
                 message: "What is the employee's manager ID?",
                 name: "mgrId"
             }
+
         ]).then(function (answer) {
             console.log(answer);
             connection.query(
