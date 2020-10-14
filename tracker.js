@@ -80,10 +80,6 @@ function inquirerInit() {
                     updateEmpRole();
                     break;
 
-                case "View all Departments":
-                    viewAllDept();
-                    break;
-
                 case "Exit":
                     connection.end();
                     break;
@@ -102,6 +98,7 @@ function viewAllEmployees() {
     })
 }
 
+// function to add department
 function addDept() {
     inquirer
         .prompt([
@@ -127,6 +124,7 @@ function addDept() {
         })
 }
 
+// function to add new role
 function addRole() {
     inquirer
         .prompt([
@@ -166,6 +164,7 @@ function addRole() {
 
 }
 
+// function to view all of the departments
 function viewAllDept() {
     const str1 = 'SELECT * FROM department'
     connection.query(str1, function (err, result) {
@@ -176,6 +175,7 @@ function viewAllDept() {
     })
 }
 
+// function to view all roles
 function viewAllRoles() {
     const str1 = 'SELECT * FROM employee_role'
     connection.query(str1, function (err, result) {
@@ -186,6 +186,7 @@ function viewAllRoles() {
     });
 }
 
+// function to view all employees
 function viewAllEmployeesByDept() {
     inquirer
         .prompt([
@@ -203,4 +204,50 @@ function viewAllEmployeesByDept() {
                     inquirerInit();
                 });
             });
+}
+
+// function to add employee
+function addEmployee() {
+    inquirer
+        .prompt([
+            {
+                type: "input",
+                message: "What is the employee's first name?",
+                name: "firstName"
+            },
+            {
+                type: "input",
+                message: "What is the employee's last name?",
+                name: "lastName"
+            },
+            {
+                type: "input",
+                message: "What is the employee's department ID?",
+                name: "deptId"
+            },
+            {
+                type: "input",
+                message: "What is the employee's manager ID?",
+                name: "mgrId"
+            }
+        ]).then(function (answer) {
+            console.log(answer);
+            connection.query(
+                "INSERT INTO employee SET ?",
+                {
+                    first_name: answer.firstName,
+                    last_name: answer.lastName,
+                    role_id: answer.deptId,
+                    manager_id: answer.mgrId
+
+                },
+                function (err) {
+                    if (err) throw err;
+                    console.log("Employee added successfully!");
+                    inquirerInit();
+
+                }
+            );
+        })
+
 }
